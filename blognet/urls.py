@@ -3,6 +3,7 @@ from django.urls import path, include
 from blognet.views import saludo, probandoTemplate  # Importa las vistas de tu aplicación blognet
 from accounts import views as accounts_views  # Importa las vistas de tu aplicación de cuentas
 from django.contrib.auth import views as auth_views  # Importa las vistas de autenticación de Django
+from blogs.views import post_list, post_detail  # Importa las vistas de tu aplicación de blogs
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -21,6 +22,8 @@ urlpatterns = [
     path('accounts/reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),  # Ruta para confirmar el restablecimiento de contraseña
     path('blogs/', include('blogs.urls')),  # Importa las URLs de tu aplicación de blogs
     path('message/', include('message.urls')),  # Importa las URLs de tu aplicación de mensaje
+    path('blogs/', post_list, name='post_list'),  # Ruta para la lista de posts
+    path('blogs/post/<int:pk>/', post_detail, name='post_detail'),  # Ruta para los detalles de un post
 ]
 
 
