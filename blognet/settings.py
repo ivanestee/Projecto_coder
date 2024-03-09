@@ -58,7 +58,7 @@ ROOT_URLCONF = 'blognet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/alobere97/Desktop/BlogNet/blognet/blognet/plantillas'],
+        'DIRS': ['C:/Users/alobere97/Desktop/BlogNet/blognet/blognet/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
